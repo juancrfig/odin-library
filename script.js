@@ -6,7 +6,8 @@ function Book(
     author, 
     year, 
     numberOfPages,
-    recommendedBy
+    recommendedBy,
+    read=false
 ) {
     this.title = title;
     this.description = description;
@@ -14,6 +15,15 @@ function Book(
     this.year = year;
     this.numberOfPages = numberOfPages;
     this.recommendedBy = recommendedBy;
+    this.read = read;
+}
+
+Book.prototype.toggleStatus = function() {
+    if (!this.read) {
+        this.read = true;
+    } else {
+        this.read = false;
+    }
 }
 
 function addBookToLibrary(title, description, author, year, numberOfPages, recommendedBy) {
