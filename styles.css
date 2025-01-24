@@ -1,0 +1,145 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Book card styles */
+.book-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.book-card h2 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 24px;
+}
+
+.book-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.book-card strong {
+    color: #2c3e50;
+}
+
+
+/* Button styles */
+#add-book-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-book-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Form styles */
+#add-book-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#add-book-form h2 {
+    margin-top: 0;
+    color: #34495e;
+}
+
+#add-book-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #2c3e50;
+}
+
+#add-book-form input,
+#add-book-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#add-book-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+#add-book-form button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#add-book-form button[type="submit"] {
+    background-color: #27ae60;
+    color: white;
+}
+
+#add-book-form button[type="submit"]:hover {
+    background-color: #219653;
+}
+
+#add-book-form button[type="button"] {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#add-book-form button[type="button"]:hover {
+    background-color: #c0392b;
+}
+
+.book-card button {
+    border: none;
+    padding: .5em;
+    background-color: rgb(180, 53, 53);
+    border-radius: 10px;
+    display: block;
+    width: 20%;
+    margin: auto;
+    transition: scale 200ms ease-in-out ;
+}
+
+.book-card button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
