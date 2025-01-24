@@ -1,14 +1,14 @@
 const myLibrary = [];
 
 function Book(
-    name, 
+    title, 
     description, 
     author, 
     year, 
     numberOfPages,
     recommendedBy
 ) {
-    this.name = name;
+    this.title = title;
     this.description = description;
     this.author = author;
     this.year = year;
@@ -16,7 +16,12 @@ function Book(
     this.recommendedBy = recommendedBy;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title, description, author, year, numberOfPages, recommendedBy) {
     
-    myLibrary.push()
+    const testBook = new Book(title, description, author, year, numberOfPages, recommendedBy) 
+
+    myLibrary.push(testBook)
 }
+
+addBookToLibrary("testBook", "Lorem ipsum", "Steve", "2000", "467", "Steve Jobs");
+console.log(myLibrary)
