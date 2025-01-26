@@ -88,7 +88,7 @@ function renderBooks() {
         // Create a container for each book
         const bookContainer = document.createElement('div');
         bookContainer.classList.add('book-card');
-        bookContainer.setAttribute('data-index', myLibrary.indexOf(book))
+        bookContainer.setAttribute('data-index', myLibrary.indexOf(book));
     
         // Add the book's information to the container
         bookContainer.innerHTML = `
@@ -98,12 +98,26 @@ function renderBooks() {
             <p><strong>Pages:</strong> ${book.numberOfPages}</p>
             <p><strong>Description:</strong> ${book.description}</p>
             <p><strong>Recommended by:</strong> ${book.recommendedBy}</p>
-            <button>Delete</button>
+            <div style="display: flex">
+                <button class="read-btn">Read</button>
+                <button class="delete-btn">Delete</button>
+            </div>
         `;
     
         // Append the book container to the body (or a specific element)
         libraryElm.appendChild(bookContainer);
     });   
+
+    const readBtns = document.querySelectorAll('.book-card .read-btn');
+    readBtns.forEach( button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('read');
+            const divBtns = button.parentElement;
+            const bookDiv = divBtns.parentElement
+            const book = myLibrary[bookDiv.dataset.index];
+            book.toggleStatus();
+        })
+    })
 
     addEventDeleteButtons();
 }
@@ -111,11 +125,10 @@ function renderBooks() {
 renderBooks()
 
 function addEventDeleteButtons() {
-    const deleteButtons = document.querySelectorAll('.book-card button');
+    const deleteButtons = document.querySelectorAll('.book-card .delete-btn');
 
     deleteButtons.forEach( button => {
         button.addEventListener('click', () => {
-            console.log(`Deleting book with index ${button.parentElement.dataset.index}`)
             deleteBook(button.parentElement.dataset.index);
         })
     })
@@ -126,8 +139,6 @@ function deleteBook(index) {
     myLibrary.splice(index, 1);
     renderBooks();
 }
-
-
 
 // Show/hide the form
 document.getElementById('add-book-btn').addEventListener('click', () => {
@@ -158,5 +169,3 @@ document.getElementById('add-book-form').addEventListener('submit', (e) => {
     document.getElementById('add-book-form').reset();
     document.getElementById('add-book-form').style.display = 'none';
 });
-
-console.log(myLibrary)
